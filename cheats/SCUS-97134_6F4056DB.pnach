@@ -1,0 +1,10 @@
+[60 FPS\ENABLE]
+author=questionmark
+description=sets the framerate to 60
+patch=3,EE,2048CF60,extended,0000003C
+patch=3,EE,2048CF64,extended,0000003C
+[60 FPS\DISABLE]
+author=questionmark
+description=sets the framerate to default
+patch=3,EE,2048CF60,extended,0000001E
+patch=3,EE,2048CF64,extended,0000001E
