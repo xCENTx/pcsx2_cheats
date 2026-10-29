@@ -1,0 +1,22 @@
+name: Pack cheats
+
+on: [pull_request]
+
+jobs:
+  pack:
+    name: Pack cheats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Create archives
+        run: |
+          7z a -r cheats.zip ./cheats/*
+
+      - name: Upload archives
+        uses: actions/upload-artifact@v7
+        with:
+          name: cheats
+          path: ./cheats.zip
+          if-no-files-found: error
